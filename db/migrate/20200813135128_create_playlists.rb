@@ -2,7 +2,8 @@ class CreatePlaylists < ActiveRecord::Migration[6.0]
   def change
     create_table :playlists do |t|
       t.integer :user_id
-      t.integer :band_id
+      t.json :monsters
+      t.json :pattern
       t.timestamps
     end
   end
