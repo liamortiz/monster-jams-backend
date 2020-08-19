@@ -16,9 +16,11 @@ ActiveRecord::Schema.define(version: 2020_08_13_135128) do
   enable_extension "plpgsql"
 
   create_table "playlists", force: :cascade do |t|
+    t.string "band_name"
     t.integer "user_id"
-    t.json "monsters"
-    t.json "pattern"
+    t.string "monsters", default: [], array: true
+    t.integer "pattern", default: [], array: true
+    t.string "sounds", default: [], array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
